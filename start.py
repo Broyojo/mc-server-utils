@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 import minecraft
 import utils
 import tmux
