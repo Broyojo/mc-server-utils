@@ -23,3 +23,7 @@ def save_off(server):
 
 def save_on(server):
     tmux.send_keys(server, "save-on")
+
+
+if __name__ == "__main__":
+    say("survival", "test")
