@@ -13,7 +13,7 @@ def backup(dir=minecraft.MAIN):
     time.sleep(2)
 
     os.system(
-        f"tar -zcvf {minecraft.BACKUPS}\"$(date +%Y-%m-%d).gz\" -C /home/broyojo/ /home/broyojo/{dir}")
+        f"tar -zcvf {minecraft.BACKUPS}\"$(date +%Y-%m-%d).gz\" -C /home/broyojo/ {dir}")
 
     for server in minecraft.servers(minecraft.MAIN):
         minecraft.say(server, "Backup complete!")
