@@ -12,7 +12,7 @@ def backup(dir=minecraft.MAIN):
 
     time.sleep(2)
 
-    prefix = "".join(dir.split("")[:-1])
+    prefix = "/".join(dir.split("/")[:-1])
 
     print(prefix)
     return
