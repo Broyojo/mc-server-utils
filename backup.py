@@ -14,9 +14,6 @@ def backup(dir=minecraft.MAIN):
 
     prefix = "/".join(dir.split("/")[:-1])
 
-    print(prefix)
-    return
-
     os.system(
         f"tar -zcvf {minecraft.BACKUPS}\"$(TZ=America/New_York date +%Y-%m-%d).gz\" -C {prefix}")
 
