@@ -21,13 +21,13 @@ def render_main(server="survival"):
     minecraft.save_on(server)
 
     minecraft.say(server, "Starting render...")
-    utils.say("Starting render...")
+    utils.log("Starting render...")
 
     os.system("overviewer.py --config=render_config.py")
     os.system("overviewer.py --config=render_config.py --genpoi")
 
     minecraft.say(server, "Render completed!")
-    utils.say("Render completed!")
+    utils.log("Render completed!")
 
 
 if __name__ == "__main__":
