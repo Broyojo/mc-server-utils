@@ -13,15 +13,16 @@ def run_task(name, task):
 
 def daily_process():
     run_task("backup", backup.backup)
+    run_task("upload", backup.upload)
     run_task("render", render.render_main)
 
 
 def main():
-    schedule.every(1).day.at("05:00").do(daily_process)  # midnight in EST
+    schedule.every(7).days.at("05:00").do(daily_process)  # midnight in EST
     utils.log("Task scheduler started")
     while True:
         schedule.run_pending()
-        time.sleep(5)
+        time.sleep(30)
 
 
 if __name__ == "__main__":
