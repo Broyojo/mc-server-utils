@@ -14,3 +14,11 @@ def start(dir):
 if __name__ == "__main__":
     start(minecraft.MAIN)
     start(minecraft.EXTRA)
+
+    tmux.new_session("webserver")
+    tmux.send_keys("cd webserver")
+    tmux.send_keys("sudo ./start.sh")
+
+    tmux.new_session("backup")
+    tmux.send_key("cd utils")
+    tmux.send_keys("python3 scheduler.py")

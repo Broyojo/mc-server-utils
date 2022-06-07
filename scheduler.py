@@ -18,11 +18,11 @@ def daily_process():
 
 
 def main():
-    schedule.every(7).days.at("05:00").do(daily_process)  # midnight in EST
+    schedule.every(3).days.at("05:00").do(daily_process)  # midnight in EST
     utils.log("Task scheduler started")
     while True:
         schedule.run_pending()
-        time.sleep(30)
+        time.sleep(60)
 
 
 if __name__ == "__main__":
