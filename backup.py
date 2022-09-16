@@ -15,7 +15,7 @@ def backup(dir=minecraft.MAIN):
     os.system(
         f"tar -zcvf {minecraft.BACKUPS}\"$(TZ=America/New_York date +%Y-%m-%d).gz\" {dir}")  # TODO: add -C
 
-    for server in minecraft.servers(minecraft.MAIN):
+    for server in minecraft.servers(dir):
         minecraft.say(server, "Backup complete!")
         minecraft.save_on(server)
 

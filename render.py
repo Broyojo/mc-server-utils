@@ -14,7 +14,7 @@ def render_main(server="survival"):
 
     time.sleep(1)
 
-    os.system(f"cp -r /home/broyojo/main/{server}/world /tmp/")
+    os.system(f"rsync -avz --delete /home/broyojo/main/{server}/world /home/broyojo/tmp")
 
     minecraft.say(server, "Finished copying world!")
     utils.log(f"Done copying {server} world file!")

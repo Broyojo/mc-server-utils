@@ -1,4 +1,4 @@
-worlds["survival"] = "/tmp/world"
+worlds["survival"] = "/home/broyojo/tmp/world"
 processes = 4
 
 def signFilter(poi):
@@ -35,7 +35,7 @@ renders["survivalday"] = {
     "title": "Overworld",
     "rendermode": smooth_lighting,
     "dimension": "overworld",
-    "crop": (-10000, -10000, 10000, 10000),
+    # "crop": (-10000, -10000, 10000, 10000),
     "markers": [dict(name="Markers", filterFunction=signFilter)],
 }
 
@@ -44,7 +44,7 @@ renders["survivalnether"] = {
     "title": "Nether",
     "rendermode": normal,
     "dimension": "nether",
-    "crop": (-1250, -1250, 1250, 1250),
+    # "crop": (-1250, -1250, 1250, 1250),
     "markers": [dict(name="Markers", filterFunction=signFilter)],
 }
 

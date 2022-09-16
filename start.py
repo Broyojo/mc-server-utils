@@ -16,9 +16,8 @@ if __name__ == "__main__":
     start(minecraft.EXTRA)
 
     tmux.new_session("webserver")
-    tmux.send_keys("cd webserver")
-    tmux.send_keys("sudo ./start.sh")
+    tmux.send_keys("webserver", "cd /home/broyojo/webserver")
 
     tmux.new_session("backup")
-    tmux.send_key("cd utils")
-    tmux.send_keys("python3 scheduler.py")
+    tmux.send_keys("backup", "cd /home/broyojo/utils")
+    tmux.send_keys("backup", "python3 scheduler.py")
