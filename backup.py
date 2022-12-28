@@ -1,9 +1,11 @@
 import os
 import time
+
 import minecraft
 import utils
 
-#TODO: Make backups use data from older backups, basically just store changes
+# TODO: Make backups use data from older backups, basically just store changes
+
 
 def backup(dir=minecraft.MAIN):
     for server in minecraft.servers(dir):
@@ -14,7 +16,8 @@ def backup(dir=minecraft.MAIN):
     time.sleep(2)
 
     os.system(
-        f"tar -zcvf {minecraft.BACKUPS}\"$(TZ=America/New_York date +%Y-%m-%d).gz\" {dir}")  # TODO: add -C
+        f'tar -zcvf {minecraft.BACKUPS}"$(TZ=America/New_York date +%Y-%m-%d).gz" {dir}'
+    )  # TODO: add -C
 
     for server in minecraft.servers(dir):
         minecraft.say(server, "Backup complete!")
@@ -24,7 +27,8 @@ def backup(dir=minecraft.MAIN):
 def upload(bucket="s3://broyojo-minecraft"):
     utils.log("Uploading to AWS S3...")
     os.system(
-        f"aws s3 sync /home/broyojo/backups {bucket} --storage-class=STANDARD_IA --profile=default")
+        f"aws s3 sync /home/broyojo/backups {bucket} --storage-class=STANDARD_IA --profile=default"
+    )
 
 
 if __name__ == "__main__":

@@ -1,8 +1,9 @@
-import utils
-import tmux
-import minecraft
-import time
 import os
+import time
+
+import minecraft
+import tmux
+import utils
 
 
 def render_main(server="survival"):
@@ -14,7 +15,9 @@ def render_main(server="survival"):
 
     time.sleep(1)
 
-    os.system(f"rsync -avz --delete /home/broyojo/main/{server}/world /home/broyojo/tmp")
+    os.system(
+        f"rsync -avz --delete /home/broyojo/main/{server}/world /home/broyojo/tmp"
+    )
 
     minecraft.say(server, "Finished copying world!")
     utils.log(f"Done copying {server} world file!")

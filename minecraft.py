@@ -1,5 +1,6 @@
-import tmux
 import os
+
+import tmux
 
 MAIN = "/home/broyojo/main/"
 EXTRA = "/home/broyojo/extra/"
@@ -13,7 +14,9 @@ def servers(dir):
 
 def say(server, msg):
     tmux.send_keys(
-        server, f"tellraw @a {{\\\"text\\\":\\\"{msg}\\\",\\\"color\\\":\\\"red\\\",\\\"bold\\\":true}}")
+        server,
+        f'tellraw @a {{\\"text\\":\\"{msg}\\",\\"color\\":\\"red\\",\\"bold\\":true}}',
+    )
 
 
 def save_off(server):

@@ -1,7 +1,8 @@
-import minecraft
-import utils
-import tmux
 import time
+
+import minecraft
+import tmux
+import utils
 
 
 def stop(dir):

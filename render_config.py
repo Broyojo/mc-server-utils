@@ -1,8 +1,9 @@
 worlds["survival"] = "/home/broyojo/tmp/world"
 processes = 4
 
+
 def signFilter(poi):
-    if poi['id'] == "Sign" or poi["id"] == "minecraft:sign":
+    if poi["id"] == "Sign" or poi["id"] == "minecraft:sign":
         data = poi["Text1"] + poi["Text2"] + poi["Text3"] + poi["Text4"]
         if len(data) >= 2:
             if data[0] == data[-1] == "*":
@@ -29,6 +30,7 @@ def signFilter(poi):
                 print("hover:", hover)
                 print("text:", text)
                 return (hover, text)
+
 
 renders["survivalday"] = {
     "world": "survival",

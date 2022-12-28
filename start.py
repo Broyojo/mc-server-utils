@@ -1,6 +1,6 @@
 import minecraft
-import utils
 import tmux
+import utils
 
 
 def start(dir):
