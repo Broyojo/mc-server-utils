@@ -3,6 +3,7 @@ import time
 import minecraft
 import utils
 
+#TODO: Make backups use data from older backups, basically just store changes
 
 def backup(dir=minecraft.MAIN):
     for server in minecraft.servers(dir):
